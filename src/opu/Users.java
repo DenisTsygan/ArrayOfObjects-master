@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import static opu.utilityPasswordMaker.generatePassword;
 
 public class Users {
-   private final int DAYS=2;
+   private final int Days_Registered_Ago=2;
    private User[] users;
    private int currentUserNumber;
 
@@ -36,7 +36,7 @@ public class Users {
    }
 
    private void CheckDayRegistration(User user) {
-      if(user.getRegistrationDate().plusDays(DAYS).isBefore(LocalDateTime.now())){
+      if(user.getRegistrationDate().plusDays(Days_Registered_Ago).isBefore(LocalDateTime.now())){
           user.setPassword(generatePassword());
       }
    }
